@@ -1,5 +1,4 @@
 // 로딩화면
-
 $('.progress_bar').each(function () {
     let progressWrap = $(this),
         progressBar = progressWrap.find('.bar'),
@@ -11,12 +10,14 @@ $('.progress_bar').each(function () {
     setInterval(textAni, 100);
     function textAni() {
         let currentWidth = progressBar.width() / progressWrap.width() * 100;
-        progressText.text(Math.ceil(currentWidth) + "%");
+        progressText.text('로딩중 '+Math.ceil(+currentWidth) + "%");
 
         // console.log(currentWidth);
         if(currentWidth==100){
-            $('.progress_bar').css('transform','scale(1.4)');
-            $('.progress_bar').css('transform','scale(0)');
+            progressText.text('완료!')
+            setTimeout(function(){
+                $('.loading').css('transform','scale(0)');
+            },800)
         }
     };
 });
@@ -25,6 +26,6 @@ $('.progress_bar').each(function () {
 let header_el = $('#header ul li');
 
 window.onload = function(){
-    header_el.animate({opacity:1},1000);
+    header_el.animate({opacity:1},3000);
 };
 
