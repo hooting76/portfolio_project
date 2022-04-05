@@ -20,6 +20,12 @@ $('.progress_bar').each(function () {
             },800)          
         }
     };
+    // 로딩화면 스크롤 고정
+    $('.loading').on('scroll touchmove mousewheel', function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        return false;
+      });
 });
 
 // 해더 fadein효과
@@ -55,4 +61,8 @@ setTimeout(function(){
     bannerText.css('margin-right','0').css('opacity','1');
 },3000);
 
-
+//전구 색상 효과
+let bulb = $('.fa-lightbulb');
+setTimeout(function(){
+    bulb.css('color',"#e3dc4e");
+},5000);
