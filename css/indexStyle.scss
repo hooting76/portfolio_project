@@ -40,19 +40,22 @@ $size12: 12px;
         }
     }
     #main{
-        width: 100%; height: 800px; background: #F6FCFB;
+        width: 100%; height: 800px; background: #F6FCFB; position: relative; transition: all .3s;
+        // .design_bar{
+        //     width: 700px; height: 50px; background: #60B0EB; position: absolute; top: 220px; left: 0;
+        // }
         .main_inner{
             width: 1400px; margin: 0 auto; height: 100%; display: flex; justify-content: space-between;
             .main_text{
                 width: 100%; height: 100%; text-align: right; position: relative;
                 h1{
-                    color: $black; font-weight: bold; font-size: 36px; padding: 35% 0; margin-right: 200px; transition: all .7s; opacity: 0;
+                    color: $black; font-weight: bold; font-size: 36px; padding: 35% 10px 35% 0; margin-right: 200px; transition: all .7s; opacity: 0; 
                     span{
                         color: $gray; font-size: $size12;
                     }
                 }
                 .mini_menu{
-                    width: 40px; background: #fff; border: 1px solid gray;border-radius: 25px; height: 40px; position: absolute; top: 10%; left: 0; display: flex; overflow: hidden; transition: all .3s;
+                    width: 40px; background: #fff; border: 1px solid gray;border-radius: 25px; height: 40px; position: absolute; top: 10%; left: 0; display: flex; overflow: hidden; transition: all .3s; margin-left: 5px;
                     .plus{
                          width: 40px; height: 40px; background: rgba(0, 0, 0, 0); cursor: pointer; z-index: 2; padding-left:10.5px; padding-right: 15px; 
                         .line1{
@@ -75,11 +78,27 @@ $size12: 12px;
                 }
             }
             .profile{
-                width: 100%; height: 100%; background: url(../img/profile1.jpg) no-repeat; background-size: 540px 540px; background-position: center;
+                width: 100%; height: 100%; background: url(../img/profile1.jpg) no-repeat; background-size: 540px 540px; background-position: center; transition: all .3s;
             }
         }
     }
-    #section{width: 100%; height: 1000px;}
+    #section{
+        width: 1400px; margin: 0 auto;
+        ul{
+            display: flex; justify-content: space-between; padding: 30px 0;
+            li{
+                &:hover{
+                    a{
+                        background: #60B0EB;
+                    }
+                }
+                a{
+                    text-align: center;font-weight: bold; font-size: $size24; display: block; padding: 15px 20px; text-transform: uppercase; transition: all .3s; border-radius: 15px;
+                    
+                }
+            }
+        }
+    }
     #footer{width: 100%;}
     .loading{
         background: #fff; width: 100%; height: 100%; position: fixed; top: 0; left: 0; transition: all .3s; transform: scale(1); z-index: 99999; 
@@ -91,5 +110,40 @@ $size12: 12px;
     }
 }
 
+//
 
+// 반응형
+// 데스크탑 1400
+@media screen and (max-width:1400px) {
+    #wrap{
+        #header ul{
+            width: 100%;
+        }
+        
+        #main{
+            .main_inner{
+                width: 100%;
+            }
+        } 
+    }
+}
 
+// 테블릿 사이즈 1024
+@media screen and (max-width:1024px) {
+    #wrap #main{ height: 600px;} 
+    #wrap #main .main_inner .profile{
+        background-size: 300px 300px
+    }
+}
+
+@media screen and (max-width:860px) {
+    #wrap #main .main_inner .main_text h1{
+        font-size: 30px;
+        padding-top: 50%;
+    }
+}
+
+// 모바일 사이즈 720
+@media screen and (max-width:720px) {
+    #wrap #main{ height: 500px;} 
+}
