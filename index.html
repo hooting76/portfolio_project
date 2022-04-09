@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="title" content="JCH_portfolio">
     <meta name="subject" content="JCH_site">
-    <meta name="publisher" content="JCH"> 
+    <meta name="publisher" content="JCH">
     <meta name="location" content="Seoul Korea">
     <meta name="author" content="JCH">
     <meta name="author-Date" content="2022-03-24">
@@ -16,15 +17,17 @@
     <meta name="classification" content="JCH">
     <meta name="robots" content="index, follow">
 
-    
+
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/indexStyle.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=13a41b3206238bed4543ce1a765f1f7d"></script>
     <script src="js/indexScript.js" defer></script>
 
     <title>JCH_PORTFOLIO</title>
 </head>
+
 <body>
     <div id="wrap">
         <ul id="skip">
@@ -60,8 +63,8 @@
                             <div class="line2"></div>
                         </button>
                         <div class="icons">
-                           <a href="#">
-                               <i class="fas fa-file"></i>
+                            <a href="#">
+                                <i class="fas fa-file"></i>
                             </a>
                             <a href="https://www.instagram.com/hoooonida/" target="_blank">
                                 <i class="fab fa-instagram"></i>
@@ -97,8 +100,63 @@
                         contact</a>
                 </li>
             </ul>
+            <div id="about">
+                <div class="about_left">
+                    <div class="about_text">
+                        <div class="about_text_top">
+                            <h2>about</h2>
+                            <h2>조창훈</h2>
+                        </div>
+                        <div class="about_text_bot">
+                            <p><a href="javascript:">경기도 오산시</a></p>
+                            <p>ggongco1120@gmail.com</p>
+                            <p>010-3696-5184</p>
+                        </div>
+                    </div>
+                    <div class="about_photo">
+                        <img src="./img/profile1.jpg" alt="profile1" class="active">
+                        <img src="./img/profile3.webp" alt="profile3">
+                    </div>
+                </div>
+                <div class="about_right">
+                    <div class="arr_area">
+                        <a href="javascript:"><i class="fas fa-angle-left"></i></a>
+                        <a href="javascript:"><i class="fas fa-angle-right"></i></a>
+                    </div>
+                    <div class="about_right_text active">
+                        <p>나이: 28세(95년생)</p>
+                        <p>학력: 한신대학교 컴퓨터공학부 졸업(학사)</p>
+                        <p>
+                            수료내역: 2021.12 - 2022.5 더휴먼 컴퓨터아트 아카데미<br> 반응형 웹·앱 프런트엔드 개발자 양성과정 수료(5개월)</p>
+                    </div>
+                    <div class="about_right_text">
+                        <ul>
+                            <li>수상·경력
+                                <ul>
+                                    <li> 1. 졸업논문: - 캘린더와 통계정보를 활용한 교수와 학생 사이의 양방향 일정 조율 <br> 웹 애플리케이션 / 2020-12 </li>
+                                    <li> 2. 제 26회 대한민국학생발명전시회: 한국무역협회장상 동상  <br>
+                                    - 출품명: 대류 원리 시험기구 / 2013년도</li>
+                                </ul>
+                            </li>
+                            <li>자격증
+                                <ul>
+                                    <li> - 웹디자인 기능사(22-05취득)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="skill">
+
+            </div>
         </section>
         <footer id="footer"></footer>
+
+        <div id="map" style="width:100%; height:350px;">
+
+        </div>
+
         <div class="loading">
             <div class="progress_bar">
                 <div class="bar"></div>
@@ -107,4 +165,5 @@
         </div>
     </div>
 </body>
+
 </html>

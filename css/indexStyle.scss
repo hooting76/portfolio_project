@@ -4,6 +4,7 @@
     font-family: "yanolja";
     src: url(../font/Jalnan.ttf);
 }
+
 *{margin: 0; padding: 0; box-sizing: border-box;}
 a{text-decoration: none;}
 li{list-style: none;}
@@ -13,6 +14,7 @@ $white: #fff;
 $blue: skyblue;
 $gray: lightgray;
 $black: #222;
+$size30: 30px;
 $size24: 24px;
 $size18: 18px;
 $size12: 12px;
@@ -84,22 +86,87 @@ $size12: 12px;
     }
     #section{
         width: 1400px; margin: 0 auto;
-        ul{
+        >ul{
             display: flex; justify-content: space-between; padding: 30px 0;
-            li{
+            >li{ transition: all .3s; border-radius: 15px; 
                 &:hover{
-                    a{
-                        background: #60B0EB;
-                    }
+                    background: #60B0EB; 
                 }
                 a{
-                    text-align: center;font-weight: bold; font-size: $size24; display: block; padding: 15px 20px; text-transform: uppercase; transition: all .3s; border-radius: 15px;
-                    
+                    text-align: center;font-weight: bold; font-size: $size24; display: block; padding: 15px 20px; text-transform: uppercase; transition: all .3s; width: 100%; 
                 }
             }
         }
+        #about{
+            width: 1400px; margin: 0 auto; height: 500px; display: flex; justify-content: space-between; 
+            .about_left{
+                display: flex; justify-content: space-between; width: 100%;
+                .about_text{
+                   padding: 15px; margin: 90px 0; width: 100%;
+                   .about_text_top{
+                       background: #60B0EB; width: 50%; position: relative; height: 110px;
+                       h2{
+                           &:first-child{bottom: 30px; right: -25px; text-transform: uppercase; font-size: 32px;}
+                           &:last-child{right: -40px; font-size: $size24;}
+                            font-weight: bold; position: absolute; bottom: 0; right: 0;
+                       }
+                   }
+                   .about_text_bot{
+                       width: 100%; height: 60%; text-align: right;
+                       p{ font-size: $size18;
+                           &:first-child{
+                               padding-top: 55px;
+                           }
+                       }
+                   }
+                }
+                .about_photo{
+                   width: 100%; margin: 100px 10px; position: relative;
+                   img{
+                       width: 100%; height: 100%; transition: all .3s;opacity: 0; position: absolute; top: 0; left: 0;
+                   }
+                   .active{opacity: 1;}
+                }
+            }
+            .about_right{
+               width: 100%;margin: 90px 0; padding: 20px; position: relative;
+               .arr_area{
+                   text-align: right; margin-right: 30px; 
+                   a{
+                       &:first-child{
+                           margin-right: 15px;
+                       }
+                       i{
+                           font-size: 32px;
+                       }
+                   }
+               }
+               .about_right_text{
+                opacity: 0; transition: all .3s; position: absolute; top: 50px; left: 0;
+                >p{
+                    margin: 25px 20px; font-size: $size18; line-height: 150%;
+                }
+                >ul{
+                    margin: 25px 20px;
+                    >li{ font-size: $size18;  line-height: 150%;
+                        &:first-child{
+                            margin-bottom: 15px; margin-top: 15px;
+                        }
+                    }
+                }
+            }
+            .active{
+                opacity: 1;
+            }
+        }
+               
+        }
+        #skill{
+            width: 1400px; margin: 50px auto; height: 1000px; background: #60B0EB;
+        }
     }
     #footer{width: 100%;}
+
     .loading{
         background: #fff; width: 100%; height: 100%; position: fixed; top: 0; left: 0; transition: all .3s; transform: scale(1); z-index: 99999; 
         .progress_bar{
@@ -108,9 +175,11 @@ $size12: 12px;
             .num{position: absolute; top: 150%; left: 50%; right: 15px; font-size: 1.5em; color: $black; line-height: 30px;font-weight: bold; font-family: 'yanolja', 'Noto Sans KR', sans-serif;} 
         }
     }
+    #map{
+        background: rgba(0, 0, 0, .6); position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    }
 }
 
-//
 
 // 반응형
 // 데스크탑 1400
@@ -125,6 +194,9 @@ $size12: 12px;
                 width: 100%;
             }
         } 
+        #section{
+            width: 100%;
+        }
     }
 }
 
@@ -145,5 +217,18 @@ $size12: 12px;
 
 // 모바일 사이즈 720
 @media screen and (max-width:720px) {
-    #wrap #main{ height: 500px;} 
+    #wrap{
+        #main{ 
+            height: 500px;
+        } 
+        #section{
+            ul{margin: 0 5px;
+                li{
+                    a{
+                        font-size: $size18;
+                    }
+                }
+            }
+        }
+    } 
 }

@@ -210,7 +210,7 @@ body {
   margin: 0 auto;
 }
 
-#wrap #section ul {
+#wrap #section > ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -220,11 +220,17 @@ body {
   padding: 30px 0;
 }
 
-#wrap #section ul li:hover a {
+#wrap #section > ul > li {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  border-radius: 15px;
+}
+
+#wrap #section > ul > li:hover {
   background: #60B0EB;
 }
 
-#wrap #section ul li a {
+#wrap #section > ul > li a {
   text-align: center;
   font-weight: bold;
   font-size: 24px;
@@ -233,7 +239,156 @@ body {
   text-transform: uppercase;
   -webkit-transition: all .3s;
   transition: all .3s;
-  border-radius: 15px;
+  width: 100%;
+}
+
+#wrap #section #about {
+  width: 1400px;
+  margin: 0 auto;
+  height: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#wrap #section #about .about_left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+#wrap #section #about .about_left .about_text {
+  padding: 15px;
+  margin: 90px 0;
+  width: 100%;
+}
+
+#wrap #section #about .about_left .about_text .about_text_top {
+  background: #60B0EB;
+  width: 50%;
+  position: relative;
+  height: 110px;
+}
+
+#wrap #section #about .about_left .about_text .about_text_top h2 {
+  font-weight: bold;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+#wrap #section #about .about_left .about_text .about_text_top h2:first-child {
+  bottom: 30px;
+  right: -25px;
+  text-transform: uppercase;
+  font-size: 32px;
+}
+
+#wrap #section #about .about_left .about_text .about_text_top h2:last-child {
+  right: -40px;
+  font-size: 24px;
+}
+
+#wrap #section #about .about_left .about_text .about_text_bot {
+  width: 100%;
+  height: 60%;
+  text-align: right;
+}
+
+#wrap #section #about .about_left .about_text .about_text_bot p {
+  font-size: 18px;
+}
+
+#wrap #section #about .about_left .about_text .about_text_bot p:first-child {
+  padding-top: 55px;
+}
+
+#wrap #section #about .about_left .about_photo {
+  width: 100%;
+  margin: 100px 10px;
+  position: relative;
+}
+
+#wrap #section #about .about_left .about_photo img {
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#wrap #section #about .about_left .about_photo .active {
+  opacity: 1;
+}
+
+#wrap #section #about .about_right {
+  width: 100%;
+  margin: 90px 0;
+  padding: 20px;
+  position: relative;
+}
+
+#wrap #section #about .about_right .arr_area {
+  text-align: right;
+  margin-right: 30px;
+}
+
+#wrap #section #about .about_right .arr_area a:first-child {
+  margin-right: 15px;
+}
+
+#wrap #section #about .about_right .arr_area a i {
+  font-size: 32px;
+}
+
+#wrap #section #about .about_right .about_right_text {
+  opacity: 0;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  position: absolute;
+  top: 50px;
+  left: 0;
+}
+
+#wrap #section #about .about_right .about_right_text > p {
+  margin: 25px 20px;
+  font-size: 18px;
+  line-height: 150%;
+}
+
+#wrap #section #about .about_right .about_right_text > ul {
+  margin: 25px 20px;
+}
+
+#wrap #section #about .about_right .about_right_text > ul > li {
+  font-size: 18px;
+  line-height: 150%;
+}
+
+#wrap #section #about .about_right .about_right_text > ul > li:first-child {
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+#wrap #section #about .about_right .active {
+  opacity: 1;
+}
+
+#wrap #section #skill {
+  width: 1400px;
+  margin: 50px auto;
+  height: 1000px;
+  background: #60B0EB;
 }
 
 #wrap #footer {
@@ -292,11 +447,23 @@ body {
   font-family: 'yanolja', 'Noto Sans KR', sans-serif;
 }
 
+#wrap #map {
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
 @media screen and (max-width: 1400px) {
   #wrap #header ul {
     width: 100%;
   }
   #wrap #main .main_inner {
+    width: 100%;
+  }
+  #wrap #section {
     width: 100%;
   }
 }
@@ -320,6 +487,12 @@ body {
 @media screen and (max-width: 720px) {
   #wrap #main {
     height: 500px;
+  }
+  #wrap #section ul {
+    margin: 0 5px;
+  }
+  #wrap #section ul li a {
+    font-size: 18px;
   }
 }
 /*# sourceMappingURL=indexStyle.css.map */
