@@ -175,9 +175,16 @@ $size12: 12px;
             .num{position: absolute; top: 150%; left: 50%; right: 15px; font-size: 1.5em; color: $black; line-height: 30px;font-weight: bold; font-family: 'yanolja', 'Noto Sans KR', sans-serif;} 
         }
     }
-    #map{
-        background: rgba(0, 0, 0, .6); position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    .map_frame{
+        background: rgba(0, 0, 0, .6); width: 100%; height: 100%; position: fixed; top: 0; left: 0; z-index: 999; display: none;
+        #map{
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); 
+        }
+        .closeBtn{
+            position: absolute; top: -10%; right: 0; display: block; padding: 15px 20px; background: $white; z-index: 999; cursor: pointer;
+        }
     }
+
 }
 
 

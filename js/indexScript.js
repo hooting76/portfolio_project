@@ -105,6 +105,15 @@ rightBtn.click(function(){
     rightText.eq(nextIdx).addClass('active');
 });
 
+// 지도표시 popup
+$('.about_text_bot>p>a').click(function(){
+    $('.map_frame').show();
+});
+$('.closeBtn').click(function(){
+    $('.map_frame').hide();
+});
+
+
 // 지도api
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
     mapOption = { 
@@ -127,3 +136,4 @@ marker.setMap(map);
 
 // 마커가 드래그 가능하도록 설정합니다 
 marker.setDraggable(false); 
+
