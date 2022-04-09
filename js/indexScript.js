@@ -135,5 +135,5 @@ var marker = new kakao.maps.Marker({
 marker.setMap(map);
 
 // 마커가 드래그 가능하도록 설정합니다 
-marker.setDraggable(false); 
+marker.setDraggable(true); 
 
