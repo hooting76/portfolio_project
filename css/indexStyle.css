@@ -459,7 +459,7 @@ body {
 }
 
 #wrap .map_frame #map {
-  position: absolute;
+  position: relative;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
