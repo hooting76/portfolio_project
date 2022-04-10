@@ -106,3 +106,10 @@ rightBtn.click(function(){
 });
 
 
+// 지도표시 popup
+$('.about_text_bot>p>a').click(function(){
+    $('.map_frame').show();
+});
+$('.closeBtn').click(function(){
+    $('.map_frame').hide();
+});
