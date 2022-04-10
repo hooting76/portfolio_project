@@ -22,9 +22,32 @@
     <link rel="stylesheet" href="css/indexStyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1b9feb2f99675f16cd1984aedbe44b45"></script>
+    <script type="text/javascript"
+        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1b9feb2f99675f16cd1984aedbe44b45"></script>
     <script src="js/indexScript.js" defer></script>
     <script src="js/map.js" defer></script>
+    <script>
+
+        // 지도api
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+            mapOption = {
+                center: new kakao.maps.LatLng(37.16351442943923, 127.06035386912332), // 지도의 중심좌표
+                level: 3 // 지도의 확대 레벨
+            };
+
+        var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+        // 마커가 표시될 위치입니다 
+        var markerPosition = new kakao.maps.LatLng(37.16351442943923, 127.06035386912332);
+
+        // 마커를 생성합니다
+        var marker = new kakao.maps.Marker({
+            position: markerPosition
+        });
+
+        // 마커가 지도 위에 표시되도록 설정합니다
+        marker.setMap(map);
+    </script>
 
     <title>JCH_PORTFOLIO</title>
 </head>
@@ -135,8 +158,8 @@
                             <li>수상·경력
                                 <ul>
                                     <li> 1. 졸업논문: - 캘린더와 통계정보를 활용한 교수와 학생 사이의 양방향 일정 조율 <br> 웹 애플리케이션 / 2020-12 </li>
-                                    <li> 2. 제 26회 대한민국학생발명전시회: 한국무역협회장상 동상  <br>
-                                    - 출품명: 대류 원리 시험기구 / 2013년도</li>
+                                    <li> 2. 제 26회 대한민국학생발명전시회: 한국무역협회장상 동상 <br>
+                                        - 출품명: 대류 원리 시험기구 / 2013년도</li>
                                 </ul>
                             </li>
                             <li>자격증
