@@ -113,3 +113,4 @@ $('.about_text_bot>p>a').click(function(){
 $('.closeBtn').click(function(){
     $('.map_frame').hide();
 });
+

@@ -162,7 +162,16 @@ $size12: 12px;
                
         }
         #skill{
-            width: 1400px; margin: 50px auto; height: 1000px; background: #60B0EB;
+            width: 1400px; margin: 50px auto; height: 1000px; 
+            .skill_title{
+                h3{
+                    font-size: $size24; text-transform: uppercase;
+                }
+                 
+            }
+            .skill_main{
+
+            }
         }
     }
     #footer{width: 100%;}
@@ -184,7 +193,6 @@ $size12: 12px;
             position: absolute; top: 20%; right: 10%; display: block; padding: 15px 20px; background: $white; z-index: 999; cursor: pointer;
         }
     }
-
 }
 
 
@@ -205,16 +213,26 @@ $size12: 12px;
             width: 100%;
             #about{
                 width: 100%;
+                .about_left{
+                    .about_photo{
+                        img{
+                        }
+                    }
+                }
             }
         }
     }
 }
+
 
 // 테블릿 사이즈 1024
 @media screen and (max-width:1024px) {
     #wrap #main{ height: 600px;} 
     #wrap #main .main_inner .profile{
         background-size: 300px 300px
+    }
+    #wrap{
+        
     }
 }
 
