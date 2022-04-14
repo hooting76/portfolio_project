@@ -23,6 +23,11 @@ body {
   font-family: 'Noto Sans KR', sans-serif;
 }
 
+#map {
+  height: 100px;
+  width: 200px;
+}
+
 #wrap {
   width: 100%;
   height: auto;
@@ -393,6 +398,9 @@ body {
 #wrap #section #skill .skill_title h3 {
   font-size: 24px;
   text-transform: uppercase;
+  display: block;
+  background: #60B0EB;
+  font-weight: bold;
 }
 
 #wrap #footer {
@@ -494,6 +502,9 @@ body {
   #wrap #section #about {
     width: 100%;
   }
+  #wrap #section #skill {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -502,6 +513,42 @@ body {
   }
   #wrap #main .main_inner .profile {
     background-size: 300px 300px;
+  }
+  #wrap #section #about {
+    display: block;
+    height: auto;
+  }
+  #wrap #section #about .about_left .about_photo {
+    width: 50%;
+  }
+  #wrap #section #about .about_right {
+    margin: 0;
+    height: 250px;
+    text-align: center;
+    position: relative;
+  }
+  #wrap #section #about .about_right .about_right_text {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    top: 0;
+  }
+  #wrap #section #about .about_right .about_right_text ul li {
+    font-size: 16px;
+  }
+  #wrap #section #about .about_right .arr_area a:first-child {
+    top: 50%;
+    left: 0;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    position: absolute;
+  }
+  #wrap #section #about .about_right .arr_area a:last-child {
+    top: 50%;
+    right: 0;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    position: absolute;
   }
 }
 
@@ -521,6 +568,9 @@ body {
   }
   #wrap #section ul li a {
     font-size: 18px;
+  }
+  #wrap #section #about .about_right .about_right_text p {
+    font-size: 16px;
   }
 }
 /*# sourceMappingURL=indexStyle.css.map */

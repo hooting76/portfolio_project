@@ -20,6 +20,10 @@ $size18: 18px;
 $size12: 12px;
 // 1em = 13px
 
+#map{
+    height: 100px;
+    width: 200px;
+}
 #wrap{width: 100%; height: auto; 
     #header{width: 100%; height: auto; border-bottom: 1px solid $gray; background: rgba(255, 255, 255, .6);
         ul{
@@ -165,9 +169,8 @@ $size12: 12px;
             width: 1400px; margin: 50px auto; height: 1000px; 
             .skill_title{
                 h3{
-                    font-size: $size24; text-transform: uppercase;
+                    font-size: $size24; text-transform: uppercase; display: block; background: #60B0EB; font-weight: bold;
                 }
-                 
             }
             .skill_main{
 
@@ -213,16 +216,15 @@ $size12: 12px;
             width: 100%;
             #about{
                 width: 100%;
-                .about_left{
-                    .about_photo{
-                        img{
-                        }
-                    }
                 }
+            #skill{
+                width: 100%;
             }
         }
+            
     }
 }
+
 
 
 // 테블릿 사이즈 1024
@@ -231,9 +233,36 @@ $size12: 12px;
     #wrap #main .main_inner .profile{
         background-size: 300px 300px
     }
-    #wrap{
-        
+
+    #wrap #section #about{
+        display: block; height: auto;
+        .about_left{
+            .about_photo{
+                width: 50%;
+            }
+        } 
+        .about_right{
+            margin: 0; height: 250px; text-align: center; position: relative;
+            .about_right_text{
+                left: 50%; transform: translateX(-50%);
+                top: 0; 
+                ul{
+                    li{
+                        font-size: 16px;
+                    }
+                }
+            }
+            .arr_area a{
+                &:first-child{
+                    top: 50%; left: 0; transform: translateY(-50%); position: absolute;
+                }
+                &:last-child{
+                    top: 50%; right: 0; transform: translateY(-50%); position: absolute;
+                }
+            }
+        }
     }
+    
 }
 
 @media screen and (max-width:860px) {
@@ -254,6 +283,13 @@ $size12: 12px;
                 li{
                     a{
                         font-size: $size18;
+                    }
+                }
+            }
+            #about{
+                .about_right{
+                    .about_right_text{
+                        p{font-size: 16px;}
                     }
                 }
             }
