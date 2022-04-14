@@ -168,8 +168,12 @@ $size12: 12px;
         #skill{
             width: 1400px; margin: 50px auto; height: 1000px; 
             .skill_title{
+                text-align: center; position: relative;
                 h3{
-                    font-size: $size24; text-transform: uppercase; display: block; background: #60B0EB; font-weight: bold;
+                    font-size: $size24; text-transform: uppercase; font-weight: bold; 
+                }
+                p{
+                    display: block; background: #60B0EB; display: block; position: absolute; top: 25px; left: 0; height: 20px;width: 100%; z-index: -1;
                 }
             }
             .skill_main{
