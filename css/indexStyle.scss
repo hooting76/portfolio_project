@@ -25,28 +25,29 @@ $size12: 12px;
     width: 100%;
 }
 #wrap{width: 100%; height: auto; 
-    #header{width: 100%; height: auto; border-bottom: 1px solid $gray; background: rgba(255, 255, 255, .6);
-        ul{
-            display: flex; justify-content: space-between; width: 1400px;height: 100%; padding: 3em; margin: 0 auto; position: relative;
-            li{
-                font-weight: bold; font-size: $size24; position: absolute; opacity: 0;
-                &:first-child{
-                    top: 0;left: 0; display: block; padding: 1em;
-                }
-                &:last-child{
-                    .fa-angle-left:before , .fa-angle-right:before{
-                        font-size: 0; transition: all .5s;
-                    }
-                    &:hover{
-                        .fa-angle-left:before , .fa-angle-right:before{ font-size: 24px;}
-                    }
-                    text-transform: uppercase; top: 0; right: 0; display: block; padding: 1em;
-                }
-            }
-        }
-    }
+    // #header{
+    //     width: 100%; height: auto; border-bottom: 1px solid $gray; background: rgba(255, 255, 255, .6);
+    //     ul{
+    //         display: flex; justify-content: space-between; width: 1400px;height: 100%; padding: 3em; margin: 0 auto; position: relative;
+    //         li{
+    //             font-weight: bold; font-size: $size24; position: absolute; opacity: 0;
+    //             &:first-child{
+    //                 top: 0;left: 0; display: block; padding: 1em;
+    //             }
+    //             &:last-child{
+    //                 .fa-angle-left:before , .fa-angle-right:before{
+    //                     font-size: 0; transition: all .5s;
+    //                 }
+    //                 &:hover{
+    //                     .fa-angle-left:before , .fa-angle-right:before{ font-size: 24px;}
+    //                 }
+    //                 text-transform: uppercase; top: 0; right: 0; display: block; padding: 1em;
+    //             }
+    //         }
+    //     }
+    // }
     #main{
-        width: 100%; height: 800px; background: #F6FCFB; position: relative; transition: all .3s;
+        width: 100%; height: 1000px; background: #F6FCFB; position: relative; transition: all .3s;
         // .design_bar{
         //     width: 700px; height: 50px; background: #60B0EB; position: absolute; top: 220px; left: 0;
         // }
@@ -117,9 +118,9 @@ $size12: 12px;
                    }
                    .about_text_bot{
                        width: 100%; height: 60%; text-align: right;
-                       p{ font-size: $size18;
+                       p{ font-size: 16px;
                            &:first-child{
-                               padding-top: 55px;
+                               padding-top: 15px;
                            }
                        }
                    }
@@ -151,8 +152,8 @@ $size12: 12px;
                     margin: 25px 20px; font-size: $size18; line-height: 150%;
                 }
                 >ul{
-                    margin: 25px 20px;
-                    >li{ font-size: $size18;  line-height: 150%;
+                    margin: 0 20px;
+                    >li{ font-size: 16px;  line-height: 150%;
                         &:first-child{
                             margin-bottom: 15px; margin-top: 15px;
                         }
@@ -173,10 +174,61 @@ $size12: 12px;
                     font-size: $size24; text-transform: uppercase; font-weight: bold; 
                 }
                 p{
-                    display: block; background: #60B0EB; display: block; position: absolute; top: 25px; left: 0; height: 20px;width: 100%; z-index: -1;
+                    display: block; background: #60B0EB; display: block; position: absolute; top: 25px; left: 50%; height: 20px;width: 250px; z-index: -1;transform: translateX(-50%);
+                }
+                .gear_area1{
+                    position: absolute; top: -150%; right: 15%; width: 200px; height: 200px;
+                    .teeth{width: 30px; height: 100%; background: #60B0EB; position: absolute; top: 0; right: 0; border-radius: 10px; z-index: -1; }
+                    .teeth1{transform: rotate(0); animation: gear1-1 8.5s infinite linear;}
+                    .teeth2{transform: rotate(45deg); animation: gear1-2 8.5s infinite linear;}
+                    .teeth3{transform: rotate(90deg); animation: gear1-3 8.5s infinite linear;}
+                    .teeth4{transform: rotate(135deg); animation: gear1-4 8.5s infinite linear;}
+                    .gear_squere{
+                        z-index: 1; 
+                        width: 130px;
+                        background: #fff;
+                        height: 130px;
+                        border-radius: 50%;
+                        position: absolute;
+                        top: 50%;
+                        border: 30px solid #60B0EB;
+                        right: -58%;
+                        transform: translate(-50%, -50%);}
+                }
+                .gear_area2{
+                    position: absolute; top: 60%; right: 27%; width: 150px; height: 150px;
+                    .teeth{width: 30px; height: 100%; background: #60B0EB; position: absolute; top: 0; right: 10%; border-radius: 10px; z-index: -1; }
+                    .teeth1{transform: rotate(-30deg); animation: gear2-1 8.2s infinite linear;}
+                    .teeth2{transform: rotate(-75deg); animation: gear2-2 8.2s infinite linear;}
+                    .teeth3{transform: rotate(-120deg); animation: gear2-3 8.2s infinite linear;}
+                    .teeth4{transform: rotate(-165deg); animation: gear2-4 8.2s infinite linear;}
+                    .gear_squere{
+                        z-index: 1; 
+                        width: 50%;
+                        background: #fff;
+                        height: 50%;
+                        border-radius: 50%;
+                        position: absolute;
+                        top: 50%;
+                        border: 15px solid #60B0EB;
+                        right: -30%;
+                        transform: translate(-50%, -50%);}
                 }
             }
             .skill_main{
+                width: 100%; height: auto; margin-top: 120px;
+                .skill_menu{
+                    display: flex; flex-wrap: wrap;
+                    li{
+                        display: inline-block; width: 20%; padding:25px 50px;
+                        a{
+                            width: 100%; display: inline-block;
+                            img{
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
 
             }
         }
@@ -199,6 +251,48 @@ $size12: 12px;
         .closeBtn{
             position: absolute; top: 20%; right: 10%; display: block; padding: 15px 20px; background: $white; z-index: 999; cursor: pointer;
         }
+    }
+}
+// 애니메이션
+@keyframes gear1-1{
+	100% {
+    	transform: rotate(360deg);
+    }
+}
+@keyframes gear1-2{
+	100% {
+    	transform: rotate(405deg);
+    }
+}
+@keyframes gear1-3{
+	100% {
+    	transform: rotate(450deg);
+    }
+}
+@keyframes gear1-4{
+	100% {
+    	transform: rotate(495deg);
+    }
+}
+
+@keyframes gear2-1{
+	100% {
+    	transform: rotate(-390deg);
+    }
+}
+@keyframes gear2-2{
+	100% {
+    	transform: rotate(-435deg);
+    }
+}
+@keyframes gear2-3{
+	100% {
+    	transform: rotate(-480deg);
+    }
+}
+@keyframes gear2-4{
+	100% {
+    	transform: rotate(-525deg);
     }
 }
 

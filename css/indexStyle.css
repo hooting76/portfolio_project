@@ -33,62 +33,9 @@ body {
   height: auto;
 }
 
-#wrap #header {
-  width: 100%;
-  height: auto;
-  border-bottom: 1px solid lightgray;
-  background: rgba(255, 255, 255, 0.6);
-}
-
-#wrap #header ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 1400px;
-  height: 100%;
-  padding: 3em;
-  margin: 0 auto;
-  position: relative;
-}
-
-#wrap #header ul li {
-  font-weight: bold;
-  font-size: 24px;
-  position: absolute;
-  opacity: 0;
-}
-
-#wrap #header ul li:first-child {
-  top: 0;
-  left: 0;
-  display: block;
-  padding: 1em;
-}
-
-#wrap #header ul li:last-child {
-  text-transform: uppercase;
-  top: 0;
-  right: 0;
-  display: block;
-  padding: 1em;
-}
-
-#wrap #header ul li:last-child .fa-angle-left:before, #wrap #header ul li:last-child .fa-angle-right:before {
-  font-size: 0;
-  -webkit-transition: all .5s;
-  transition: all .5s;
-}
-
-#wrap #header ul li:last-child:hover .fa-angle-left:before, #wrap #header ul li:last-child:hover .fa-angle-right:before {
-  font-size: 24px;
-}
-
 #wrap #main {
   width: 100%;
-  height: 800px;
+  height: 1000px;
   background: #F6FCFB;
   position: relative;
   -webkit-transition: all .3s;
@@ -308,11 +255,11 @@ body {
 }
 
 #wrap #section #about .about_left .about_text .about_text_bot p {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 #wrap #section #about .about_left .about_text .about_text_bot p:first-child {
-  padding-top: 55px;
+  padding-top: 15px;
 }
 
 #wrap #section #about .about_left .about_photo {
@@ -372,11 +319,11 @@ body {
 }
 
 #wrap #section #about .about_right .about_right_text > ul {
-  margin: 25px 20px;
+  margin: 0 20px;
 }
 
 #wrap #section #about .about_right .about_right_text > ul > li {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 150%;
 }
 
@@ -412,10 +359,163 @@ body {
   display: block;
   position: absolute;
   top: 25px;
-  left: 0;
+  left: 50%;
   height: 20px;
-  width: 100%;
+  width: 250px;
   z-index: -1;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+#wrap #section #skill .skill_title .gear_area1 {
+  position: absolute;
+  top: -150%;
+  right: 15%;
+  width: 200px;
+  height: 200px;
+}
+
+#wrap #section #skill .skill_title .gear_area1 .teeth {
+  width: 30px;
+  height: 100%;
+  background: #60B0EB;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 10px;
+  z-index: -1;
+}
+
+#wrap #section #skill .skill_title .gear_area1 .teeth1 {
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+  -webkit-animation: gear1-1 8.5s infinite linear;
+          animation: gear1-1 8.5s infinite linear;
+}
+
+#wrap #section #skill .skill_title .gear_area1 .teeth2 {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-animation: gear1-2 8.5s infinite linear;
+          animation: gear1-2 8.5s infinite linear;
+}
+
+#wrap #section #skill .skill_title .gear_area1 .teeth3 {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  -webkit-animation: gear1-3 8.5s infinite linear;
+          animation: gear1-3 8.5s infinite linear;
+}
+
+#wrap #section #skill .skill_title .gear_area1 .teeth4 {
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+  -webkit-animation: gear1-4 8.5s infinite linear;
+          animation: gear1-4 8.5s infinite linear;
+}
+
+#wrap #section #skill .skill_title .gear_area1 .gear_squere {
+  z-index: 1;
+  width: 130px;
+  background: #fff;
+  height: 130px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  border: 30px solid #60B0EB;
+  right: -58%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+#wrap #section #skill .skill_title .gear_area2 {
+  position: absolute;
+  top: 60%;
+  right: 27%;
+  width: 150px;
+  height: 150px;
+}
+
+#wrap #section #skill .skill_title .gear_area2 .teeth {
+  width: 30px;
+  height: 100%;
+  background: #60B0EB;
+  position: absolute;
+  top: 0;
+  right: 10%;
+  border-radius: 10px;
+  z-index: -1;
+}
+
+#wrap #section #skill .skill_title .gear_area2 .teeth1 {
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+  -webkit-animation: gear2-1 8.2s infinite linear;
+          animation: gear2-1 8.2s infinite linear;
+}
+
+#wrap #section #skill .skill_title .gear_area2 .teeth2 {
+  -webkit-transform: rotate(-75deg);
+          transform: rotate(-75deg);
+  -webkit-animation: gear2-2 8.2s infinite linear;
+          animation: gear2-2 8.2s infinite linear;
+}
+
+#wrap #section #skill .skill_title .gear_area2 .teeth3 {
+  -webkit-transform: rotate(-120deg);
+          transform: rotate(-120deg);
+  -webkit-animation: gear2-3 8.2s infinite linear;
+          animation: gear2-3 8.2s infinite linear;
+}
+
+#wrap #section #skill .skill_title .gear_area2 .teeth4 {
+  -webkit-transform: rotate(-165deg);
+          transform: rotate(-165deg);
+  -webkit-animation: gear2-4 8.2s infinite linear;
+          animation: gear2-4 8.2s infinite linear;
+}
+
+#wrap #section #skill .skill_title .gear_area2 .gear_squere {
+  z-index: 1;
+  width: 50%;
+  background: #fff;
+  height: 50%;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  border: 15px solid #60B0EB;
+  right: -30%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+#wrap #section #skill .skill_main {
+  width: 100%;
+  height: auto;
+  margin-top: 120px;
+}
+
+#wrap #section #skill .skill_main .skill_menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#wrap #section #skill .skill_main .skill_menu li {
+  display: inline-block;
+  width: 20%;
+  padding: 25px 50px;
+}
+
+#wrap #section #skill .skill_main .skill_menu li a {
+  width: 100%;
+  display: inline-block;
+}
+
+#wrap #section #skill .skill_main .skill_menu li a img {
+  width: 100%;
 }
 
 #wrap #footer {
@@ -502,6 +602,118 @@ body {
   background: #fff;
   z-index: 999;
   cursor: pointer;
+}
+
+@-webkit-keyframes gear1-1 {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes gear1-1 {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes gear1-2 {
+  100% {
+    -webkit-transform: rotate(405deg);
+            transform: rotate(405deg);
+  }
+}
+
+@keyframes gear1-2 {
+  100% {
+    -webkit-transform: rotate(405deg);
+            transform: rotate(405deg);
+  }
+}
+
+@-webkit-keyframes gear1-3 {
+  100% {
+    -webkit-transform: rotate(450deg);
+            transform: rotate(450deg);
+  }
+}
+
+@keyframes gear1-3 {
+  100% {
+    -webkit-transform: rotate(450deg);
+            transform: rotate(450deg);
+  }
+}
+
+@-webkit-keyframes gear1-4 {
+  100% {
+    -webkit-transform: rotate(495deg);
+            transform: rotate(495deg);
+  }
+}
+
+@keyframes gear1-4 {
+  100% {
+    -webkit-transform: rotate(495deg);
+            transform: rotate(495deg);
+  }
+}
+
+@-webkit-keyframes gear2-1 {
+  100% {
+    -webkit-transform: rotate(-390deg);
+            transform: rotate(-390deg);
+  }
+}
+
+@keyframes gear2-1 {
+  100% {
+    -webkit-transform: rotate(-390deg);
+            transform: rotate(-390deg);
+  }
+}
+
+@-webkit-keyframes gear2-2 {
+  100% {
+    -webkit-transform: rotate(-435deg);
+            transform: rotate(-435deg);
+  }
+}
+
+@keyframes gear2-2 {
+  100% {
+    -webkit-transform: rotate(-435deg);
+            transform: rotate(-435deg);
+  }
+}
+
+@-webkit-keyframes gear2-3 {
+  100% {
+    -webkit-transform: rotate(-480deg);
+            transform: rotate(-480deg);
+  }
+}
+
+@keyframes gear2-3 {
+  100% {
+    -webkit-transform: rotate(-480deg);
+            transform: rotate(-480deg);
+  }
+}
+
+@-webkit-keyframes gear2-4 {
+  100% {
+    -webkit-transform: rotate(-525deg);
+            transform: rotate(-525deg);
+  }
+}
+
+@keyframes gear2-4 {
+  100% {
+    -webkit-transform: rotate(-525deg);
+            transform: rotate(-525deg);
+  }
 }
 
 @media screen and (max-width: 1400px) {
