@@ -530,7 +530,7 @@ body {
 #wrap #section #skill .skill_main .skill_menu li a .text_slide {
   position: absolute;
   left: 0;
-  bottom: -99%;
+  bottom: -100%;
   background: rgba(96, 176, 235, 0.5);
   width: 100%;
   height: 100%;
@@ -641,6 +641,30 @@ body {
   height: 500px;
 }
 
+#wrap #section #portfolio .port_main .port_idx .port_slide > a {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 3;
+}
+
+#wrap #section #portfolio .port_main .port_idx .port_slide > a i {
+  font-size: 18px;
+}
+
+#wrap #section #portfolio .port_main .port_idx .port_slide > a:nth-child(1) {
+  left: 50px;
+}
+
+#wrap #section #portfolio .port_main .port_idx .port_slide > a:nth-child(2) {
+  right: 50px;
+}
+
+#wrap #section #portfolio .port_main .port_idx .port_slide li.on {
+  visibility: visible;
+}
+
 #wrap #section #portfolio .port_main .port_idx .port_slide li {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -653,6 +677,9 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
+  visibility: hidden;
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
 #wrap #section #portfolio .port_main .port_idx .port_slide li .slide_img {
