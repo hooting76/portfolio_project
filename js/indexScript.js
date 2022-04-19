@@ -114,3 +114,86 @@ $('.closeBtn').click(function(){
     $('.map_frame').hide();
 });
 
+
+// 포트폴리오 영역 슬라이드 작업
+let banner = $('.port_idx>.port_slide>li');
+let current = 0;
+// 양쪽화살표버튼 불러오기
+let port_slide_left_btn = $('.port_idx>.port_slide>a').eq(0);
+let port_slide_right_btn = $('.port_idx>.port_slide>a').eq(1);
+let port_list = $('.port_list>li');
+
+// console.log(port_slide_left,port_slide_right); ok
+
+// 양쪽화살표 관련
+port_slide_left_btn.click(function(){
+    current--;
+    if(current ==-1) current=banner.size()-1;
+    // console.log(current);
+
+    let next = banner.eq(current);
+    let next_list = port_list.eq(current);
+    // console.log(next);
+
+    port_list.find('a').removeClass('on');
+    next_list.find('a').addClass('on');
+    banner.removeClass('on');
+    next.addClass('on');
+});
+
+port_slide_right_btn.click(function(){
+    current++;
+    if(current ==banner.size()) current=0;
+    // console.log(current);
+
+    let next = banner.eq(current);
+    let next_list = port_list.eq(current);
+    // console.log(next);
+    port_list.find('a').removeClass('on');
+    next_list.find('a').addClass('on');
+    banner.removeClass('on');
+    next.addClass('on');
+});
+// 화살표 끝.
+
+// 슬라이드 상단 메뉴
+port_list.click(function(){
+    let tg = $(this);
+    let i = tg.index();
+
+    port_list.find('a').removeClass('on');
+    tg.find('a').addClass('on');
+
+    if(current>i){
+        slideDotBtn1(i);
+    }else{
+        slideDotBtn2(i);
+    }
+});
+
+function slideDotBtn1(i){
+    // 현재랑 같다면 아무것도 안함.
+    if(current==i) return;
+
+    let currentEl = banner.eq(current);
+    let nextEl = banner.eq(i);
+
+    console.log(nextEl);
+
+    currentEl.removeClass('on');
+    nextEl.addClass('on');
+    current=i;
+};
+
+function slideDotBtn2(i){
+    // 현재랑 같다면 아무것도 안함.
+    if(current==i) return;
+
+    let currentEl = banner.eq(current);
+    let nextEl = banner.eq(i);
+
+    currentEl.removeClass('on');
+    nextEl.addClass('on');
+    current=i;
+};
+// 슬라이드 상단메뉴 끝.

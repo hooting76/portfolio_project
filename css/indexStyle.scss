@@ -279,7 +279,7 @@ $size12: 12px;
                         >a{
                             position: absolute; top: 50%; transform: translateY(-50%); z-index: 3;
                             i{
-                                font-size: $size18;
+                                font-size: 32px;
                             }
                             &:nth-child(1){
                                 left: 50px;
@@ -289,13 +289,13 @@ $size12: 12px;
                             }
                         }
                         li.on{
-                            visibility: visible;
+                            transform: scale(1); 
                         }
                         li{
-                            display: flex; justify-content: center; position: absolute; top: 0; left: 0; width: 100%; height: 100%; visibility: hidden; transition: all .3s;
+                            display: flex; justify-content: center; position: absolute; top: 0; left: 0; width: 100%; height: 100%; transform: scale(0); transition: all .3s;
                             .slide_img{
                                 width: 55%;
-                                img{width: 100%;}
+                                img{width: 100%; transition: all .3s;}
                             }
                             .slide_comment{
                                 margin: auto 0; 
@@ -303,17 +303,69 @@ $size12: 12px;
                                     font-size: $size24; font-weight: bold; transition: all .3s;
                                 }
                                 >p{
-                                    font-size: 14px; color: #666; margin-top: 15px;
+                                    font-size: 14px; color: #666; margin-top: 15px; transition: all .3s;
                                 }
                                 .view_work{
                                     text-align: center; margin-top: $size30; display: flex; justify-content: center;
                                     a{
+                                        &:first-child{margin-right: 15px;}
                                         i{
                                             font-size: 32px;
                                         }
                                     }
                                 }
                             }
+                        }
+                    }
+                }
+            }
+        }
+        #roadmap{
+            width: 100%; height: auto;margin: 25px auto;
+            .roadmap_title{
+                text-align: center; position: relative; margin-bottom: 15px;
+                h3{font-size: $size30; font-weight: bold; text-transform: uppercase;}
+                p{display: block; background: #60B0EB; display: block; position: absolute; top: 25px; left: 50%; height: 20px;width: 250px; z-index: -1;transform: translateX(-50%);}
+            }
+            .roadmap_main{
+                width: 100%; height: 500px;
+                .road_line{
+                    width: 100%; border-radius: 25px; height: 25px;background: linear-gradient(to right,lightblue,#60B0EB); position: relative; top: 50%; transform: translateY(-50%); left: 0;
+                    .way_point{
+                        width: 50px; height: 50px; border-radius: 50%; border: 15px solid #60B0EB; position: absolute;top: -50%; left: 15%; background: #fff;
+                        .check_point{
+                            position: absolute; width: 300px; background: linear-gradient(to right,lightblue,#60B0EB); border-radius: 15px; padding: 15px 25px;
+                            h6{
+                                text-align: center; font-size: $size18;
+                            }
+                            ol{
+                               >li{
+                                   list-style: disc;
+                               }
+                            }
+                        }
+                    }
+                    .way_point1{
+                        >.check_point{
+                            top: -150px; right: 0;
+                        }
+                    }
+                    .way_point2{
+                        left: 40%;
+                        >.check_point{
+                            top: 50px; right: 0;
+                        }
+                    }
+                    .way_point3{
+                        left: 65%;
+                        >.check_point{
+                            top: -150px; right: 0;
+                        }
+                    }
+                    .way_point4{
+                        left: 90%;
+                        >.check_point{
+                            top: 50px; right: 0;
                         }
                     }
                 }
@@ -408,7 +460,11 @@ $size12: 12px;
         }
     }
 }
-
+@media screen and (max-width:1150px){
+    .port_slide>a{
+        display: none;
+    }
+}
 
 
 // 테블릿 사이즈 1024
@@ -464,8 +520,10 @@ $size12: 12px;
                     }
                 }
             }
+
         }
     }
+    #wrap #section #portfolio .port_main .port_idx .port_slide li .slide_img img{margin: 130px 0;}
 }
 
 @media screen and (max-width:860px) {
@@ -475,6 +533,12 @@ $size12: 12px;
     }
     #wrap #section #skill .skill_title .gear_area2{
         display: none;
+    }
+    #wrap #section #portfolio .port_main .port_idx .port_slide li .slide_comment h5{
+        font-size: 22px;
+    }
+    #wrap #section #portfolio .port_main .port_idx .port_slide li .slide_comment > p{
+        font-size: 12px;
     }
 }
 
@@ -511,9 +575,9 @@ $size12: 12px;
             height: 500px;
         } 
         #section{
-            ul{margin: 0 5px;
-                li{
-                    a{
+            >ul{margin: 0 5px;
+                >li{
+                    >a{
                         font-size: $size18;
                     }
                 }
