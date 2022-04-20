@@ -13,7 +13,7 @@ $('.progress_bar').each(function () {
         progressText.text('로딩중 '+Math.ceil(+currentWidth) + "%");
 
         // console.log(currentWidth);
-        if(currentWidth==100){
+        if(Math.ceil(+currentWidth)==100){
             progressText.text('완료!')
             setTimeout(function(){
                 $('.loading').css('transform','scale(0)');
@@ -197,3 +197,74 @@ function slideDotBtn2(i){
     current=i;
 };
 // 슬라이드 상단메뉴 끝.
+
+
+// 로드맵 클릭 이벤트
+let loadMapBtn = $('.way_point>a');
+
+loadMapBtn.click(function(){
+    let opValue = $(this).next().css('opacity');
+
+    // console.log(opValue); ok
+
+    if(opValue==0){
+        $(this).next().css('opacity',1);
+        $(this).parent().css('background','#bbb');
+    }
+    if(opValue==1){
+        $(this).next().css('opacity',0);
+        $(this).parent().css('background','#fff');
+    }
+})
+
+// 클릭이벤트 끝.
+// 로드맵 길이에 따른 opacity값 조절
+$(window).resize(function(){
+    windowResize();
+});
+
+function windowResize(){
+    winW=$(window).innerWidth();
+
+    if(winW<1401){
+        $('.way_point').not('.way_point1').find('.c_p_text').css('opacity',0);
+        $('.way_point').not('.way_point1').css('background','#fff');
+    }
+    if(winW>=1401){
+        $('.way_point').not('.way_point1').find('.c_p_text').css('opacity',1);
+        $('.way_point').not('.way_point1').css('background','#bbb');
+    }
+}
+
+// 메뉴바 이동 애니메이트
+$('.toAbout').click(function(){
+    $('html, body').animate({scrollTop: $('#about').offset().top},800)
+});
+$('.toSkill').click(function(){
+    $('html, body').animate({scrollTop: $('#skill').offset().top},800)
+});
+$('.toPortfolio').click(function(){
+    $('html, body').animate({scrollTop: $('#portfolio').offset().top},800)
+});
+$('.toRoadmap').click(function(){
+    $('html, body').animate({scrollTop: $('#roadmap').offset().top},800)
+});
+
+// 메뉴바 스트롤값에 따라 상단 고정하기
+// $(window).scroll(function(){
+//     let menuTop = $('#section>ul').offset().top;
+//     let sct=$(window).scrollTop();
+
+//     console.log(menuTop);
+//     // console.log(sct);
+//     // console.log(menuTop-sct);
+
+//     if(menuTop-sct <= 1){
+//         $('#section>ul').css({'position':'fixed','top':0,'left':0,'width':'100%','background':'rgba(255, 255, 255, .95)'});
+//     }
+//     if(menuTop-sct > 1){
+//         $('#section>ul').css({'position':'static','top':0,'left':0});
+//     }
+
+// });
+

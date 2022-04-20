@@ -170,6 +170,7 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 30px 0;
+  z-index: 50;
 }
 
 #wrap #section > ul > li {
@@ -772,13 +773,36 @@ body {
   width: 100%;
   border-radius: 25px;
   height: 25px;
-  background: -webkit-gradient(linear, left top, right top, from(lightblue), to(#60B0EB));
-  background: linear-gradient(to right, lightblue, #60B0EB);
+  background: cornflowerblue;
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   left: 0;
+}
+
+#wrap #section #roadmap .roadmap_main .road_line .arr_area .arr_top {
+  width: 70px;
+  height: 25px;
+  border-radius: 25px;
+  background: cornflowerblue;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  position: absolute;
+  top: -20px;
+  right: -1px;
+}
+
+#wrap #section #roadmap .roadmap_main .road_line .arr_area .arr_bot {
+  width: 70px;
+  height: 25px;
+  border-radius: 25px;
+  background: cornflowerblue;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  position: absolute;
+  top: 20px;
+  right: -1px;
 }
 
 #wrap #section #roadmap .roadmap_main .road_line .way_point {
@@ -788,62 +812,80 @@ body {
   border: 15px solid #60B0EB;
   position: absolute;
   top: -50%;
-  left: 15%;
-  background: #fff;
+  left: 10%;
+  background: #bbb;
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
-#wrap #section #roadmap .roadmap_main .road_line .way_point .check_point {
+#wrap #section #roadmap .roadmap_main .road_line .way_point > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#wrap #section #roadmap .roadmap_main .road_line .way_point > .c_p_text {
   position: absolute;
-  width: 300px;
+  width: auto;
   background: -webkit-gradient(linear, left top, right top, from(lightblue), to(#60B0EB));
   background: linear-gradient(to right, lightblue, #60B0EB);
   border-radius: 15px;
   padding: 15px 25px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  opacity: 1;
 }
 
-#wrap #section #roadmap .roadmap_main .road_line .way_point .check_point h6 {
+#wrap #section #roadmap .roadmap_main .road_line .way_point > .c_p_text h6 {
   text-align: center;
   font-size: 18px;
 }
 
-#wrap #section #roadmap .roadmap_main .road_line .way_point .check_point ol > li {
+#wrap #section #roadmap .roadmap_main .road_line .way_point > .c_p_text ol > li {
   list-style: disc;
 }
 
-#wrap #section #roadmap .roadmap_main .road_line .way_point1 > .check_point {
-  top: -150px;
-  right: 0;
+#wrap #section #roadmap .roadmap_main .road_line .way_point1 > .c_p_text {
+  top: -220px;
+  right: -700%;
 }
 
 #wrap #section #roadmap .roadmap_main .road_line .way_point2 {
-  left: 40%;
+  left: 30%;
 }
 
-#wrap #section #roadmap .roadmap_main .road_line .way_point2 > .check_point {
+#wrap #section #roadmap .roadmap_main .road_line .way_point2 > .c_p_text {
   top: 50px;
-  right: 0;
+  right: -1300%;
 }
 
 #wrap #section #roadmap .roadmap_main .road_line .way_point3 {
-  left: 65%;
+  left: 55%;
 }
 
-#wrap #section #roadmap .roadmap_main .road_line .way_point3 > .check_point {
+#wrap #section #roadmap .roadmap_main .road_line .way_point3 > .c_p_text {
   top: -150px;
-  right: 0;
+  right: -1000%;
 }
 
 #wrap #section #roadmap .roadmap_main .road_line .way_point4 {
-  left: 90%;
+  left: 80%;
 }
 
-#wrap #section #roadmap .roadmap_main .road_line .way_point4 > .check_point {
-  top: 50px;
-  right: 0;
+#wrap #section #roadmap .roadmap_main .road_line .way_point4 > .c_p_text {
+  top: 70px;
+  left: -250px;
 }
 
 #wrap #footer {
   width: 100%;
+  border-top: 1px solid #ddd;
+}
+
+#wrap #footer p {
+  font-size: 12px;
+  text-align: center;
+  padding: 15px 0;
 }
 
 #wrap .loading {
@@ -862,7 +904,7 @@ body {
 
 #wrap .loading .progress_bar {
   position: relative;
-  width: 1000px;
+  width: 80%;
   height: 20px;
   margin: 3rem auto;
   top: 40%;
@@ -1096,14 +1138,14 @@ body {
   }
   #wrap #section #about .about_right .arr_area a:first-child {
     top: 50%;
-    left: 0;
+    left: 50px;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
     position: absolute;
   }
   #wrap #section #about .about_right .arr_area a:last-child {
     top: 50%;
-    right: 0;
+    right: 50px;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
     position: absolute;
