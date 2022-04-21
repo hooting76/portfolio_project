@@ -13,7 +13,7 @@ $('.progress_bar').each(function () {
         progressText.text('로딩중 '+Math.ceil(+currentWidth) + "%");
 
         // console.log(currentWidth);
-        if(Math.ceil(+currentWidth)==100){
+        if(Math.ceil(+currentWidth)>=100){
             progressText.text('완료!')
             setTimeout(function(){
                 $('.loading').css('transform','scale(0)');
@@ -243,23 +243,24 @@ $('.toAbout').click(function(){
     $(this).addClass('on');
 });
 $('.toSkill').click(function(){
-    $('html, body').animate({scrollTop: $('#skill').offset().top-120},800);
+    $('html, body').animate({scrollTop: $('#skill').offset().top},800);
     $('#section>ul>li').removeClass('on');
     $(this).addClass('on');
 });
 $('.toPortfolio').click(function(){
-    $('html, body').animate({scrollTop: $('#portfolio').offset().top-120},800);
+    $('html, body').animate({scrollTop: $('#portfolio').offset().top},800);
     $('#section>ul>li').removeClass('on');
     $(this).addClass('on');
 });
 $('.toRoadmap').click(function(){
-    $('html, body').animate({scrollTop: $('#roadmap').offset().top-120},800);
+    $('html, body').animate({scrollTop: $('#roadmap').offset().top},800);
     $('#section>ul>li').removeClass('on');
     $(this).addClass('on');
 });
 
 // 메뉴바 스트롤값에 따라 상단 고정하기
 let menu = $('#section>ul');
+let contents = $('#section>ul>li');
 let menuTop = menu.offset().top;
 
 $(window).scroll(function(){
@@ -270,9 +271,33 @@ $(window).scroll(function(){
         });
     }else{
         menu.removeClass('fixed');
-        $('#section>ul>li').removeClass('on');
+        contents.removeClass('on');
     }
 });
 
+// 스크롤에 따라 해당컨텐츠의 버튼 색상 변경
+$(window).scroll(function(){
+    let sct=$(window).scrollTop();
+    if($('#about').offset().top <= sct){
+        $('#section>ul>li').removeClass('on');
+        $('.toAbout').addClass('on');
+    }
+    if($('#skill').offset().top <= sct){
+        $('#section>ul>li').removeClass('on');
+        $('.toSkill').addClass('on');
+    }
+    if($('#portfolio').offset().top <= sct){
+        $('#section>ul>li').removeClass('on');
+        $('.toPortfolio').addClass('on');
+    }
+    if(sct == $(document).height() - $(window).height()){
+        $('#section>ul>li').removeClass('on');
+        $('.toRoadmap').addClass('on');
+    }
+});
 
-
+// totop버튼
+let topBtn = $('.toTop');
+topBtn.click(function(){
+    $('html, body').animate({scrollTop: $('#wrap').offset().top},800);
+});
