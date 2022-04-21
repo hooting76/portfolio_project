@@ -89,7 +89,9 @@ $size12: 12px;
                 }
             }
         }
-        >ul.fixed{position: fixed; top: 0; left: 0; width: 100%; background: rgba(255, 255, 255, .9); padding: 15px; }
+        >ul.fixed{
+            position: fixed; top: 0; left: 0; width: 100%; background: rgba(255, 255, 255, .9); padding: 15px; justify-content: space-around;
+        }
 
         #about{
             width: 1400px; margin: 0 auto; height: 500px; display: flex; justify-content: space-between; 
