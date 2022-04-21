@@ -178,7 +178,7 @@ function slideDotBtn1(i){
     let currentEl = banner.eq(current);
     let nextEl = banner.eq(i);
 
-    console.log(nextEl);
+    // console.log(nextEl);
 
     currentEl.removeClass('on');
     nextEl.addClass('on');
@@ -238,33 +238,41 @@ function windowResize(){
 
 // 메뉴바 이동 애니메이트
 $('.toAbout').click(function(){
-    $('html, body').animate({scrollTop: $('#about').offset().top},800)
+    $('html, body').animate({scrollTop: $('#about').offset().top},800);
+    $('#section>ul>li').removeClass('on');
+    $(this).addClass('on');
 });
 $('.toSkill').click(function(){
-    $('html, body').animate({scrollTop: $('#skill').offset().top},800)
+    $('html, body').animate({scrollTop: $('#skill').offset().top-120},800);
+    $('#section>ul>li').removeClass('on');
+    $(this).addClass('on');
 });
 $('.toPortfolio').click(function(){
-    $('html, body').animate({scrollTop: $('#portfolio').offset().top},800)
+    $('html, body').animate({scrollTop: $('#portfolio').offset().top-120},800);
+    $('#section>ul>li').removeClass('on');
+    $(this).addClass('on');
 });
 $('.toRoadmap').click(function(){
-    $('html, body').animate({scrollTop: $('#roadmap').offset().top},800)
+    $('html, body').animate({scrollTop: $('#roadmap').offset().top-120},800);
+    $('#section>ul>li').removeClass('on');
+    $(this).addClass('on');
 });
 
 // 메뉴바 스트롤값에 따라 상단 고정하기
-// $(window).scroll(function(){
-//     let menuTop = $('#section>ul').offset().top;
-//     let sct=$(window).scrollTop();
+let menu = $('#section>ul');
+let menuTop = menu.offset().top;
 
-//     console.log(menuTop);
-//     // console.log(sct);
-//     // console.log(menuTop-sct);
+$(window).scroll(function(){
+    if($(this).scrollTop() >= menuTop){
+        menu.addClass('fixed');
+        menu.stop().animate({height:'auto'},500,function(){
+            return
+        });
+    }else{
+        menu.removeClass('fixed');
+        $('#section>ul>li').removeClass('on');
+    }
+});
 
-//     if(menuTop-sct <= 1){
-//         $('#section>ul').css({'position':'fixed','top':0,'left':0,'width':'100%','background':'rgba(255, 255, 255, .95)'});
-//     }
-//     if(menuTop-sct > 1){
-//         $('#section>ul').css({'position':'static','top':0,'left':0});
-//     }
 
-// });
 

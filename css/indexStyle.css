@@ -21,6 +21,7 @@ li {
 
 body {
   font-family: 'Noto Sans KR', sans-serif;
+  background: #fff;
 }
 
 #map {
@@ -31,6 +32,7 @@ body {
 #wrap {
   width: 100%;
   height: auto;
+  background: #fff;
 }
 
 #wrap #main {
@@ -160,6 +162,7 @@ body {
 #wrap #section {
   width: 1400px;
   margin: 0 auto;
+  background: #fff;
 }
 
 #wrap #section > ul {
@@ -171,6 +174,7 @@ body {
           justify-content: space-between;
   padding: 30px 0;
   z-index: 50;
+  height: auto;
 }
 
 #wrap #section > ul > li {
@@ -193,6 +197,31 @@ body {
   -webkit-transition: all .3s;
   transition: all .3s;
   width: 100%;
+}
+
+#wrap #section > ul > li.on {
+  background: #60B0EB;
+}
+
+#wrap #section > ul > li.on a {
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+  display: block;
+  padding: 15px 20px;
+  text-transform: uppercase;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  width: 100%;
+}
+
+#wrap #section > ul.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 15px;
 }
 
 #wrap #section #about {
@@ -352,6 +381,8 @@ body {
   font-size: 24px;
   text-transform: uppercase;
   font-weight: bold;
+  position: relative;
+  z-index: 2;
 }
 
 #wrap #section #skill .skill_title p {
@@ -363,7 +394,7 @@ body {
   left: 50%;
   height: 20px;
   width: 250px;
-  z-index: -1;
+  z-index: 1;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
 }
@@ -384,7 +415,7 @@ body {
   top: 0;
   right: 0;
   border-radius: 10px;
-  z-index: -1;
+  z-index: 1;
 }
 
 #wrap #section #skill .skill_title .gear_area1 .teeth1 {
@@ -445,7 +476,7 @@ body {
   top: 0;
   right: 10%;
   border-radius: 10px;
-  z-index: -1;
+  z-index: 1;
 }
 
 #wrap #section #skill .skill_title .gear_area2 .teeth1 {
@@ -567,6 +598,8 @@ body {
 #wrap #section #portfolio .port_title h3 {
   font-size: 30px;
   font-weight: bold;
+  z-index: 2;
+  position: relative;
 }
 
 #wrap #section #portfolio .port_title p {
@@ -578,7 +611,7 @@ body {
   left: 50%;
   height: 20px;
   width: 250px;
-  z-index: -1;
+  z-index: 1;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
 }
@@ -748,6 +781,8 @@ body {
   font-size: 30px;
   font-weight: bold;
   text-transform: uppercase;
+  z-index: 2;
+  position: relative;
 }
 
 #wrap #section #roadmap .roadmap_title p {
@@ -759,7 +794,7 @@ body {
   left: 50%;
   height: 20px;
   width: 250px;
-  z-index: -1;
+  z-index: 1;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
 }
@@ -790,7 +825,7 @@ body {
           transform: rotate(45deg);
   position: absolute;
   top: -20px;
-  right: -1px;
+  right: 2px;
 }
 
 #wrap #section #roadmap .roadmap_main .road_line .arr_area .arr_bot {
@@ -802,7 +837,7 @@ body {
           transform: rotate(-45deg);
   position: absolute;
   top: 20px;
-  right: -1px;
+  right: 2px;
 }
 
 #wrap #section #roadmap .roadmap_main .road_line .way_point {
@@ -827,13 +862,13 @@ body {
 #wrap #section #roadmap .roadmap_main .road_line .way_point > .c_p_text {
   position: absolute;
   width: auto;
-  background: -webkit-gradient(linear, left top, right top, from(lightblue), to(#60B0EB));
-  background: linear-gradient(to right, lightblue, #60B0EB);
+  background: cornflowerblue;
   border-radius: 15px;
   padding: 15px 25px;
   -webkit-transition: all .3s;
   transition: all .3s;
   opacity: 1;
+  color: #fff;
 }
 
 #wrap #section #roadmap .roadmap_main .road_line .way_point > .c_p_text h6 {
@@ -1154,7 +1189,7 @@ body {
     width: 25%;
   }
   #wrap #section #skill .skill_main .skill_menu li a .text_slide h4 {
-    font-size: 14px;
+    font-size: 13px;
   }
   #wrap #section #skill .skill_main .skill_menu li a .text_slide p {
     font-size: 12px;

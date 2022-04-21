@@ -8,7 +8,7 @@
 *{margin: 0; padding: 0; box-sizing: border-box;}
 a{text-decoration: none;}
 li{list-style: none;}
-body{font-family: 'Noto Sans KR', sans-serif;}
+body{font-family: 'Noto Sans KR', sans-serif; background: #fff;}
 
 $white: #fff;
 $blue: skyblue;
@@ -24,33 +24,9 @@ $size12: 12px;
     height: 100px;
     width: 100%;
 }
-#wrap{width: 100%; height: auto; 
-    // #header{
-    //     width: 100%; height: auto; border-bottom: 1px solid $gray; background: rgba(255, 255, 255, .6);
-    //     ul{
-    //         display: flex; justify-content: space-between; width: 1400px;height: 100%; padding: 3em; margin: 0 auto; position: relative;
-    //         li{
-    //             font-weight: bold; font-size: $size24; position: absolute; opacity: 0;
-    //             &:first-child{
-    //                 top: 0;left: 0; display: block; padding: 1em;
-    //             }
-    //             &:last-child{
-    //                 .fa-angle-left:before , .fa-angle-right:before{
-    //                     font-size: 0; transition: all .5s;
-    //                 }
-    //                 &:hover{
-    //                     .fa-angle-left:before , .fa-angle-right:before{ font-size: 24px;}
-    //                 }
-    //                 text-transform: uppercase; top: 0; right: 0; display: block; padding: 1em;
-    //             }
-    //         }
-    //     }
-    // }
+#wrap{width: 100%; height: auto; background: #fff;
     #main{
         width: 100%; height: 1000px; background: #F6FCFB; position: relative; transition: all .3s;
-        // .design_bar{
-        //     width: 700px; height: 50px; background: #60B0EB; position: absolute; top: 220px; left: 0;
-        // }
         .main_inner{
             width: 1400px; margin: 0 auto; height: 100%; display: flex; justify-content: space-between;
             .main_text{
@@ -90,9 +66,9 @@ $size12: 12px;
         }
     }
     #section{
-        width: 1400px; margin: 0 auto;
+        width: 1400px; margin: 0 auto; background: #fff;
         >ul{
-            display: flex; justify-content: space-between; padding: 30px 0; z-index: 50;
+            display: flex; justify-content: space-between; padding: 30px 0; z-index: 50; height: auto;
             >li{ transition: all .3s; border-radius: 15px; 
                 &:hover{
                     background: #60B0EB; 
@@ -101,7 +77,15 @@ $size12: 12px;
                     text-align: center;font-weight: bold; font-size: $size24; display: block; padding: 15px 20px; text-transform: uppercase; transition: all .3s; width: 100%; 
                 }
             }
+            >li.on{
+                background: #60B0EB; 
+                a{
+                    text-align: center;font-weight: bold; font-size: $size24; display: block; padding: 15px 20px; text-transform: uppercase; transition: all .3s; width: 100%; 
+                }
+            }
         }
+        >ul.fixed{position: fixed; top: 0; left: 0; width: 100%; background: rgba(255, 255, 255, .9); padding: 15px; }
+
         #about{
             width: 1400px; margin: 0 auto; height: 500px; display: flex; justify-content: space-between; 
             .about_left{
@@ -171,14 +155,14 @@ $size12: 12px;
             .skill_title{
                 text-align: center; position: relative;
                 h3{
-                    font-size: $size24; text-transform: uppercase; font-weight: bold; 
+                    font-size: $size24; text-transform: uppercase; font-weight: bold; position: relative; z-index: 2;
                 }
                 p{
-                    display: block; background: #60B0EB; display: block; position: absolute; top: 25px; left: 50%; height: 20px;width: 250px; z-index: -1;transform: translateX(-50%);
+                    display: block; background: #60B0EB; display: block; position: absolute; top: 25px; left: 50%; height: 20px;width: 250px; z-index: 1;transform: translateX(-50%);
                 }
                 .gear_area1{
                     position: absolute; top: -150%; right: 15%; width: 200px; height: 200px;
-                    .teeth{width: 30px; height: 100%; background: #60B0EB; position: absolute; top: 0; right: 0; border-radius: 10px; z-index: -1; }
+                    .teeth{width: 30px; height: 100%; background: #60B0EB; position: absolute; top: 0; right: 0; border-radius: 10px; z-index: 1; }
                     .teeth1{transform: rotate(0); animation: gear1-1 8.5s infinite linear;}
                     .teeth2{transform: rotate(45deg); animation: gear1-2 8.5s infinite linear;}
                     .teeth3{transform: rotate(90deg); animation: gear1-3 8.5s infinite linear;}
@@ -197,7 +181,7 @@ $size12: 12px;
                 }
                 .gear_area2{
                     position: absolute; top: 60%; right: 27%; width: 150px; height: 150px;
-                    .teeth{width: 30px; height: 100%; background: #60B0EB; position: absolute; top: 0; right: 10%; border-radius: 10px; z-index: -1; }
+                    .teeth{width: 30px; height: 100%; background: #60B0EB; position: absolute; top: 0; right: 10%; border-radius: 10px; z-index: 1; }
                     .teeth1{transform: rotate(-30deg); animation: gear2-1 8.2s infinite linear;}
                     .teeth2{transform: rotate(-75deg); animation: gear2-2 8.2s infinite linear;}
                     .teeth3{transform: rotate(-120deg); animation: gear2-3 8.2s infinite linear;}
@@ -249,8 +233,8 @@ $size12: 12px;
             width: 100%; height: auto;margin: 15px auto;
             .port_title{
                 text-align: center; position: relative; margin-bottom: 15px;
-                h3{font-size: $size30; font-weight: bold; }
-                p{display: block; background: #60B0EB; display: block; position: absolute; top: 25px; left: 50%; height: 20px;width: 250px; z-index: -1;transform: translateX(-50%);}
+                h3{font-size: $size30; font-weight: bold; z-index: 2; position: relative;}
+                p{display: block; background: #60B0EB; display: block; position: absolute; top: 25px; left: 50%; height: 20px;width: 250px; z-index: 1;transform: translateX(-50%);}
             }
             .port_main{
                 width: 100%; height: auto;
@@ -324,8 +308,8 @@ $size12: 12px;
             width: 100%; height: auto;margin: 25px auto;
             .roadmap_title{
                 text-align: center; position: relative; margin-bottom: 15px;
-                h3{font-size: $size30; font-weight: bold; text-transform: uppercase;}
-                p{display: block; background: #60B0EB; display: block; position: absolute; top: 25px; left: 50%; height: 20px;width: 250px; z-index: -1;transform: translateX(-50%);}
+                h3{font-size: $size30; font-weight: bold; text-transform: uppercase; z-index: 2; position: relative;}
+                p{display: block; background: #60B0EB; display: block; position: absolute; top: 25px; left: 50%; height: 20px;width: 250px; z-index: 1;transform: translateX(-50%);}
             }
             .roadmap_main{
                 width: 100%; height: 500px;
@@ -334,11 +318,11 @@ $size12: 12px;
                     .arr_area{
                         .arr_top{
                             width: 70px; height: 25px; border-radius: 25px; background: cornflowerblue;  transform: rotate(45deg);
-                            position: absolute; top: -20px; right: -1px;
+                            position: absolute; top: -20px; right: 2px;
                         }
                         .arr_bot{
                             width: 70px; height: 25px; border-radius: 25px; background: cornflowerblue; transform: rotate(-45deg);
-                            position: absolute; top: 20px; right: -1px;
+                            position: absolute; top: 20px; right: 2px;
                         }
                     }
                     .way_point{
@@ -347,7 +331,7 @@ $size12: 12px;
                         >a{display: block; width: 100%;height: 100%;}
 
                         >.c_p_text{
-                            position: absolute; width: auto; background: linear-gradient(to right,lightblue,#60B0EB); border-radius: 15px; padding: 15px 25px; transition: all .3s; opacity: 1;
+                            position: absolute; width: auto; background: cornflowerblue; border-radius: 15px; padding: 15px 25px; transition: all .3s; opacity: 1; color: #fff;
                             h6{
                                 text-align: center; font-size: $size18;
                             }
@@ -388,7 +372,9 @@ $size12: 12px;
     }
     #footer{
         width: 100%; border-top: 1px solid #ddd;
-        p{font-size: $size12; text-align: center; padding: 15px 0;}
+        p{
+            font-size: $size12; text-align: center; padding: 15px 0;
+        }
     }
 
     .loading{
@@ -530,7 +516,7 @@ $size12: 12px;
                             a{
                                 .text_slide{
                                     h4{
-                                        font-size: 14px;
+                                        font-size: 13px;
                                     }
                                     p{font-size: 12px;}
                                 }
