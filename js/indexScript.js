@@ -301,3 +301,19 @@ let topBtn = $('.toTop');
 topBtn.click(function(){
     $('html, body').animate({scrollTop: $('#wrap').offset().top},800);
 });
+
+// 메인에서는 totop버튼 비활성화
+
+
+$(window).scroll(function(){
+    let sct=$(window).scrollTop();
+
+    console.log($('#main').offset().top); 
+
+    if($('#main').offset().top==sct){
+        topBtn.css('bottom','-30px');
+    }else if($('#main').offset().top !== sct){
+        topBtn.css('bottom','50px');
+    }
+});
+

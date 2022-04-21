@@ -58,8 +58,11 @@ body {
 
 #wrap #main .main_inner .toTop {
   position: fixed;
-  bottom: 50px;
+  bottom: -30px;
   right: 50px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  z-index: 999;
 }
 
 #wrap #main .main_inner .toTop a i {
@@ -587,6 +590,8 @@ body {
   font-weight: bold;
   padding-bottom: 15px;
   border-bottom: 2px solid lightblue;
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
 #wrap #section #skill .skill_main .skill_menu li a .text_slide p {
@@ -1142,6 +1147,9 @@ body {
   }
   #wrap #section #skill {
     width: 100%;
+  }
+  #wrap #section #skill .skill_main .skill_menu li a .text_slide h4 {
+    font-size: 14px;
   }
 }
 
