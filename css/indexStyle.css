@@ -24,6 +24,10 @@ body {
   background: #fff;
 }
 
+header {
+  visibility: hidden;
+}
+
 #map {
   height: 100px;
   width: 100%;
