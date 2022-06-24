@@ -200,60 +200,60 @@ function slideDotBtn2(i){
 
 
 // 로드맵 클릭 이벤트
-let loadMapBtn = $('.way_point>a');
+// let loadMapBtn = $('.way_point>a');
 
-loadMapBtn.click(function(){
-    let opValue = $(this).next().css('opacity');
+// loadMapBtn.click(function(){
+//     let opValue = $(this).next().css('opacity');
 
-    // console.log(opValue); ok
+//     // console.log(opValue); ok
 
-    if(opValue==0){
-        $(this).next().css('opacity',1);
-        $(this).parent().css('background','#bbb');
-    }
-    if(opValue==1){
-        $(this).next().css('opacity',0);
-        $(this).parent().css('background','#fff');
-    }
-})
+//     if(opValue==0){
+//         $(this).next().css('opacity',1);
+//         $(this).parent().css('background','#bbb');
+//     }
+//     if(opValue==1){
+//         $(this).next().css('opacity',0);
+//         $(this).parent().css('background','#fff');
+//     }
+// })
 
 // 클릭이벤트 끝.
 // 로드맵 길이에 따른 opacity값 조절
-$(window).resize(function(){
-    windowResize();
-});
+// $(window).resize(function(){
+//     windowResize();
+// });
 
-function windowResize(){
-    winW=$(window).innerWidth();
+// function windowResize(){
+//     winW=$(window).innerWidth();
 
-    if(winW<1401){
-        $('.way_point').not('.way_point1').find('.c_p_text').css('opacity',0);
-        $('.way_point').not('.way_point1').css('background','#fff');
-    }
-    if(winW>=1401){
-        $('.way_point').not('.way_point1').find('.c_p_text').css('opacity',1);
-        $('.way_point').not('.way_point1').css('background','#bbb');
-    }
-}
+//     if(winW<1401){
+//         $('.way_point').not('.way_point1').find('.c_p_text').css('opacity',0);
+//         $('.way_point').not('.way_point1').css('background','#fff');
+//     }
+//     if(winW>=1401){
+//         $('.way_point').not('.way_point1').find('.c_p_text').css('opacity',1);
+//         $('.way_point').not('.way_point1').css('background','#bbb');
+//     }
+// }
 
 // 메뉴바 이동 애니메이트
 $('.toAbout').click(function(){
-    $('html, body').animate({scrollTop: $('#about').offset().top},800);
+    $('html, body').animate({scrollTop: $('#about').offset().top-120},800);
     $('#section>ul>li').removeClass('on');
     $(this).addClass('on');
 });
 $('.toSkill').click(function(){
-    $('html, body').animate({scrollTop: $('#skill').offset().top},800);
+    $('html, body').animate({scrollTop: $('#skill').offset().top-100},800);
     $('#section>ul>li').removeClass('on');
     $(this).addClass('on');
 });
 $('.toPortfolio').click(function(){
-    $('html, body').animate({scrollTop: $('#portfolio').offset().top},800);
+    $('html, body').animate({scrollTop: $('#portfolio').offset().top-95},800);
     $('#section>ul>li').removeClass('on');
     $(this).addClass('on');
 });
-$('.toRoadmap').click(function(){
-    $('html, body').animate({scrollTop: $('#roadmap').offset().top},800);
+$('.toContact').click(function(){
+    $('html, body').animate({scrollTop: $('#contact').offset().top},800);
     $('#section>ul>li').removeClass('on');
     $(this).addClass('on');
 });
@@ -278,21 +278,23 @@ $(window).scroll(function(){
 // 스크롤에 따라 해당컨텐츠의 버튼 색상 변경
 $(window).scroll(function(){
     let sct=$(window).scrollTop();
-    if($('#about').offset().top <= sct){
+
+    if($('#about').offset().top-120 <= sct){
         $('#section>ul>li').removeClass('on');
         $('.toAbout').addClass('on');
     }
-    if($('#skill').offset().top <= sct){
+    if($('#skill').offset().top-100 <= sct){
         $('#section>ul>li').removeClass('on');
         $('.toSkill').addClass('on');
     }
-    if($('#portfolio').offset().top <= sct){
+    if($('#portfolio').offset().top-100 <= sct){
         $('#section>ul>li').removeClass('on');
         $('.toPortfolio').addClass('on');
     }
     if(sct == $(document).height() - $(window).height()){
+
         $('#section>ul>li').removeClass('on');
-        $('.toRoadmap').addClass('on');
+        $('.toContact').addClass('on');
     }
 });
 
@@ -308,7 +310,7 @@ topBtn.click(function(){
 $(window).scroll(function(){
     let sct=$(window).scrollTop();
 
-    console.log($('#main').offset().top); 
+    // console.log($('#main').offset().top); 
 
     if($('#main').offset().top==sct){
         topBtn.css('bottom','-30px');

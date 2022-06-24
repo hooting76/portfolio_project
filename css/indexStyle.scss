@@ -241,8 +241,11 @@ $size12: 12px;
             width: 100%; height: auto;margin: 15px auto;
             .port_title{
                 text-align: center; position: relative; margin-bottom: 15px;
-                h3{font-size: $size30; font-weight: bold; z-index: 2; position: relative;}
-                p{display: block; background: #60B0EB; display: block; position: absolute; top: 25px; left: 50%; height: 20px;width: 250px; z-index: 1;transform: translateX(-50%);}
+                h3{
+                    font-size: $size30; font-weight: bold; z-index: 2; position: relative;}
+                p{
+                    display: block; background: #60B0EB; display: block; position: absolute; top: 25px; left: 50%; height: 20px;width: 250px; z-index: 1;transform: translateX(-50%);
+                }
             }
             .port_main{
                 width: 100%; height: auto;
@@ -312,76 +315,41 @@ $size12: 12px;
                 }
             }
         }
-        #roadmap{
-            width: 100%; height: auto;margin: 25px auto;
-            .roadmap_title{
+        #contact{
+            width: 100%; height: auto; margin: 15px auto;
+            .contact_title{
                 text-align: center; position: relative; margin-bottom: 15px;
-                h3{font-size: $size30; font-weight: bold; text-transform: uppercase; z-index: 2; position: relative;}
-                p{display: block; background: #60B0EB; display: block; position: absolute; top: 25px; left: 50%; height: 20px;width: 250px; z-index: 1;transform: translateX(-50%);}
+                h3{
+                    font-size: 30px; font-weight: bold; z-index: 2; position: relative;
+                }
+                p{
+                    background: #60B0EB; display: block; position: absolute; top: 25px; left: 50%; height: 20px; width: 250px; z-index: 1; transform: translateX(-50%);
+                }
             }
-            .roadmap_main{
-                width: 100%; height: 500px;
-                .road_line{
-                    width: 100%; border-radius: 25px; height: 25px;background: cornflowerblue; position: relative; top: 50%; transform: translateY(-50%); left: 0;
-                    .arr_area{
-                        .arr_top{
-                            width: 70px; height: 25px; border-radius: 25px; background: cornflowerblue;  transform: rotate(45deg);
-                            position: absolute; top: -20px; right: 2px;
-                        }
-                        .arr_bot{
-                            width: 70px; height: 25px; border-radius: 25px; background: cornflowerblue; transform: rotate(-45deg);
-                            position: absolute; top: 20px; right: 2px;
-                        }
-                    }
-                    .way_point{
-                        width: 50px; height: 50px; border-radius: 50%; border: 15px solid #60B0EB; position: absolute;top: -50%; left: 10%; background: #bbb; transition: all .3s;
-
-                        >a{display: block; width: 100%;height: 100%;}
-
-                        >.c_p_text{
-                            position: absolute; width: auto; background: cornflowerblue; border-radius: 15px; padding: 15px 25px; transition: all .3s; opacity: 1; color: #fff;
-                            h6{
-                                text-align: center; font-size: $size18;
-                            }
-                            ol{
-                               >li{
-                                   list-style: disc;
-                               }
+            .contact_main{
+                width: 1400px; margin: 0 auto;
+                >ul{
+                    display: flex; justify-content: space-around; width: 100%; 
+                    li{
+                        width: 50%;
+                        &:last-child{
+                            p{
+                                margin: 15% 0; text-align: left; font-weight: bold; font-size: $size18; transition: all .3s;
                             }
                         }
-                    }
-                    .way_point1{
-                        >.c_p_text{
-                            top: -220px; right:-700%;
-                        }
-                    }
-                    .way_point2{
-                        left: 30%;
-                        >.c_p_text{
-                            top: 50px; right: -1300%;
-                        }
-                    }
-                    .way_point3{
-                        left: 55%;
-
-                        >.c_p_text{
-                            top: -150px; right:-1000%;
-                        }
-                    }
-                    .way_point4{
-                        left: 80%;
-                        >.c_p_text{
-                            top: 70px; left: -250px;
+                        img{
+                            width: 50%; margin: 10% 10% 10% 30%; 
                         }
                     }
                 }
             }
         }
-    }
+        }
+    
     #footer{
         width: 100%; border-top: 1px solid #ddd;
         p{
-            font-size: $size12; text-align: center; padding: 15px 0;
+            font-size: $size12; text-align: center; padding: 15px 0; transition: all .3s;
         }
     }
 
@@ -482,9 +450,29 @@ $size12: 12px;
                     }
                 }
             }
+            #contact{
+                width: 100%;
+                .contact_main{
+                    width: 100%;
+                    ul{
+                        li{
+                            p{
+                                margin: 15% 0 15% -10%; 
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
+
+@media screen and (max-width:1300px){
+    #wrap #section #contact .contact_main > ul li:last-child p{
+        font-size: 14px;
+    }
+}
+
 @media screen and (max-width:1150px){
     .port_slide>a{
         display: none;
@@ -551,6 +539,9 @@ $size12: 12px;
 
         }
     }
+    #wrap #section #contact .contact_main > ul li:last-child p{
+        font-size: $size12;
+    }
     #wrap #section #portfolio .port_main .port_idx .port_slide li .slide_img img{margin: 130px 0;}
 }
 
@@ -593,6 +584,9 @@ $size12: 12px;
                 }
             }
         }
+    }
+    #wrap #section #contact .contact_main > ul li:last-child p{
+        font-size: 10px;
     }
 }
 
