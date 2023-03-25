@@ -37,16 +37,14 @@
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
-
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/indexStyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-    <script type="text/javascript"
-        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1b9feb2f99675f16cd1984aedbe44b45"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1b9feb2f99675f16cd1984aedbe44b45"></script>
     <script src="js/indexScript.js" defer></script>
     <script src="js/map.js" defer></script>
-
+    <script src="js/weather_api.js" defer></script>
     <title>JCH_PORTFOLIO</title>
 </head>
 
@@ -58,7 +56,11 @@
             <li><a href="#section">섹션바로가기</a></li>
             <li><a href="#footer">푸터바로가기</a></li>
         </ul>
-        <header></header>
+        <header>
+            <div class="weather_info_wrap">
+
+            </div>
+        </header>
         <main id="main">
             <div class="main_inner">
                 <div class="toTop">
@@ -237,7 +239,7 @@
                                 </div>
                             </a>
                         </li>
-                        <li><a href="javascript:"><img src="./img/figma_logo.png" alt="figma">
+                        <!-- <li><a href="javascript:"><img src="./img/figma_logo.png" alt="figma">
                                 <div class="text_slide">
                                     <h4>사용된 프로젝트</h4>
                                     <p>포트폴리오 페이지</p>
@@ -250,7 +252,7 @@
                                     <p>소방청(클론코딩)</p>
                                 </div>
                             </a>
-                        </li>
+                        </li> -->
                         <li><a href="javascript:"><img src="./img/bootstrap-logo.png" alt="bootstrap">
                                 <div class="text_slide">
                                     <h4>사용된 프로젝트</h4>

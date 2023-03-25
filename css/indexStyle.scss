@@ -9,7 +9,7 @@
 a{text-decoration: none;}
 li{list-style: none;}
 body{font-family: 'Noto Sans KR', sans-serif; background: #fff;}
-header{visibility: hidden;}
+header{position:fixed; top:100px; right:100px; z-index: 9999; border:1px solid #aaa; border-radius: 15px; width: 100px; height: 100px; background-color: white;}
 
 $white: #fff;
 $blue: skyblue;
