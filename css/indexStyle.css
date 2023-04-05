@@ -22,18 +22,6 @@ body {
   background: #fff;
 }
 
-header {
-  position: fixed;
-  top: 100px;
-  right: 100px;
-  z-index: 9999;
-  border: 1px solid #aaa;
-  border-radius: 15px;
-  width: 100px;
-  height: 100px;
-  background-color: white;
-}
-
 #map {
   height: 100px;
   width: 100%;
@@ -43,6 +31,22 @@ header {
   width: 100%;
   height: auto;
   background: #fff;
+}
+#wrap header {
+  position: fixed;
+  top: 100px;
+  right: 100px;
+  z-index: 9999;
+  border: 1px solid #aaa;
+  border-radius: 15px;
+  background-color: white;
+  padding: 0 2%;
+}
+#wrap header > .weather_info_wrap > div {
+  padding: 25% 0%;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
 }
 #wrap #main {
   width: 100%;
