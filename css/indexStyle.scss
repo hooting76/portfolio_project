@@ -336,12 +336,12 @@ $size12: 12px;
             .contact_main{
                 width: 1400px; margin: 0 auto;
                 >ul{
-                    display: flex; justify-content: space-around; width: 100%; 
+                    display: flex; justify-content: space-around; width: 100%; align-items: center;
                     li{
                         width: 50%;
                         &:last-child{
                             p{
-                                margin: 15% 0; text-align: left; font-weight: bold; font-size: $size18; transition: all .3s;
+                                margin: 15% 0; text-align: left; font-weight: bold; font-size: $size18; transition: all .3s; word-break: keep-all;
                             }
                         }
                         img{

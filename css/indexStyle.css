@@ -227,12 +227,6 @@ body {
   position: relative;
   height: 110px;
 }
-#wrap #section #about .about_left .about_text .about_text_top h2 {
-  font-weight: bold;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-}
 #wrap #section #about .about_left .about_text .about_text_top h2:first-child {
   bottom: 30px;
   right: -25px;
@@ -242,6 +236,12 @@ body {
 #wrap #section #about .about_left .about_text .about_text_top h2:last-child {
   right: -40px;
   font-size: 24px;
+}
+#wrap #section #about .about_left .about_text .about_text_top h2 {
+  font-weight: bold;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 #wrap #section #about .about_left .about_text .about_text_bot {
   width: 100%;
@@ -648,6 +648,7 @@ body {
   display: flex;
   justify-content: space-around;
   width: 100%;
+  align-items: center;
 }
 #wrap #section #contact .contact_main > ul li {
   width: 50%;
@@ -658,6 +659,7 @@ body {
   font-weight: bold;
   font-size: 18px;
   transition: all 0.3s;
+  word-break: keep-all;
 }
 #wrap #section #contact .contact_main > ul li img {
   width: 50%;
