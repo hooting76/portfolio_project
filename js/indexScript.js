@@ -81,7 +81,7 @@ leftBtn.click(function(){
     rightText.removeClass('active');
 
     let nextIdx = prevIdx-1;
-    if(nextIdx== -1) nextIdx=1;
+    if(nextIdx== -4) nextIdx=1;
     // console.log(nextIdx);
 
     $('.about_photo img').eq(nextIdx).addClass('active');
@@ -98,7 +98,7 @@ rightBtn.click(function(){
     rightText.removeClass('active');
 
     let nextIdx = prevIdx+1;
-    if(nextIdx== 2) nextIdx=0;
+    if(nextIdx== 4) nextIdx=0;
     // console.log(nextIdx);
 
     $('.about_photo img').eq(nextIdx).addClass('active');
